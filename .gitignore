@@ -30,3 +30,46 @@
 *.exe
 *.out
 *.app
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+*.iobj
+*.tlog
+# Precompiled Headers
+*.gch
+*.pch
+*.log
+*.pdb
+*.tlog
+*.idb
+*.ilk
+# Compiled Dynamic libraries
+*.dylib
+*.lib
+*.ipdb
+# Fortran module files
+*.mod
+*.exe
+# Compiled Static libraries
+*.lai
+*.la
+*.db
+# Executables
+*.out
+*.app
+
+# virtual studio temp files
+*.suo
+*.pdf
+*.sdf
+*.opensdf
+*.filters
+*.user
+*.mk
+*~
+*.opendb
+geco-engine.VC.db
+*.idb
