@@ -11,3 +11,24 @@ bitsPerSecondToClient: 20000
 #	and never change the size of the package with no length information.) 
 packetAlwaysContainLength: 0
 
+#是否需要将任何接收和发送的包以文本输出到log中提供调试
+#(Whether the contents of the log output packet)
+#debug_type:
+#    0: 不输出(Not output)
+#    1: 16进制输出(16 hexadecimal output)
+#    2: 字符流输出(Stringstream output)
+#    3: 10进制输出(10 hexadecimal output)
+#use_logfile:
+#    是否独立一个log文件来记录包内容，文件名通常为
+#    (Whether the use of other log files ? such as:)
+#    appname_packetlogs.log
+#disable_msgs:
+#    关闭某些包的输出
+#    (Some messages are not output)
+trace_packet:
+    debug_type: 0
+    use_logfile: false
+    disables:
+        - Encrypted.packets
+        - Baseappmgr.updateBaseapp
+        
