@@ -1,0 +1,51 @@
+---
+machine:
+    machine_find_interface_addr_callback: 
+        id: 0
+        descr: 寻找组件接口地址"
+        
+    start_server:
+        id: 1
+        descr: 寻找组件接口地址
+
+clientapp: 
+    loginapp_authenticate_user_login_callback: 
+        id: &clientapp.loginapp_authenticate_user_login_callback.id 
+            0   
+        descr: 
+            login_status is set with a value returned from remote call of Loginapp.authenticate_user_login()
+        args:
+            login_status: uint8_array 
+        
+    baseapp_enitity_rmi_CB: &on_rmi_from_baseapp
+        id: 2
+        descr: login_status is set with a value returned from remote call of Loginapp.authenticate_user_login()
+        args:
+            login_status: uint8_array 
+        
+loginapp: 
+    authenticate_user_login:
+        id: 2
+        descr: 客户端请求登录到服务器的loginapp进程， 此进程收到请求验证合法后会返回一个网关地址
+        args:
+            frontend: string
+            data: uint8_array
+            account_name: string
+            pwd: string
+        return: 
+            login_status: uint8_array
+            to: *clientapp.loginapp_authenticate_user_login_callback.id 
+         
+    startserver:
+        id: 1
+        descr: "寻找组件接口地址"
+        args:
+            frontend: string
+            data: uint8_array
+ 
+        
+    
+      
+      
+        
+    

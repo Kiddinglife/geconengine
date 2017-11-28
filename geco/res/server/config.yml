@@ -1,0 +1,13 @@
+# 游戏逻辑处理频率HZ (Update frequency process, HZ)
+gameUpdateHertz: 10 
+
+# 每秒发送到客户端的带宽限制(bit) (The data sent to the client, the second bandwidth limit 
+bitsPerSecondToClient: 20000
+
+# 非0则不优化， 不带包长信息的包强制都携带长度信息， 
+# 某些情况下方便某些前端对接协议什么样的包不带长度信息? 所有能够预先计算出包大小的且永远不变的包不带长度信息， 如果有可变字符串参数则一定需要带长度信息
+#	(Non-0 is not optimized, Force all packets contain length information, Some convenient docking protocol client.
+#	What of data packet length information does not? All packages can be calculated in advance 
+#	and never change the size of the package with no length information.) 
+packetAlwaysContainLength: 0
+
